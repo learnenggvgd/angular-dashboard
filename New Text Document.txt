@@ -1,0 +1,182 @@
+…or create a new repository on the command line
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/learnenggvgd/test.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/learnenggvgd/test.git
+git branch -M main
+git push -u origin main
+
+
+angular meterial meterial.angular,io
+
+high charts highcharts.com
+
+
+flex layout : 
+
+
+
+
+create project  ng new dashboard
+routing set yes
+css
+cd project
+ng serve --open
+
+clear app.component.htmml with out router-outlet
+
+ng add @angular/material
+yes
+deep purple
+yes
+include animations
+
+
+check angulr components
+https://material.angular.io/components/button/overview
+
+app.module.ts
+
+api -must
+import {MatButtonModule} from '@angular/material/button';
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+ <button mat-raised-button color="primary">Primary</button>
+
+to app.component 
+
+erorr
+Could not find Angular Material core theme. Most Material components may not work as expected. For more info refer to the theming guide: https://material.angular.io/guide/theming
+
+stackoverflow
+
+Please insert below code into your styles.css which is located in your src folder.
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+remove button from html and app modules 
+
+
+high charts
+
+page => npm install highcharts-angular --save
+
+npm install highcharts --save
+
+flux layout in angular
+
+npm i -s @angular/flex-layout @angular/cdk
+
+
+we create components so create folder 
+
+single command for create inside a folder
+
+ng g c layout/defualt
+
+we use more one module for this projectct 
+
+1.  ng g m layout/defualt
+
+create a component iside a modules/dashboard
+ng g c modules/dashboard
+
+update in app.module so in is no we need defualt module
+
+cut from app.module 
+
+
+
+
+import { DefualtModule } from './layout/defualt/defualt.module';
+DefualtModule  @app.module
+
+
+
+DefualtComponent,
+ DashboardComponent  cut to default to default.module
+
+chiled component
+
+const routes: Routes = [
+  {
+    path:'',component:DefualtComponent,
+    children:[
+      {
+        path:'',component:DashboardComponent
+      }
+    ]
+  }
+];
+
+more than one chiled component possible
+
+
+ng g c shared/header
+
+ng g c shared/footer
+ng g c shared/sidebar
+
+
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent   cut app.module  to shared.modele and import
+
+
+
+create a component post inside a module/posts
+
+ng g c modules/posts
+
+
+cut to paste to defualt.module
+
+
+header and ts select selector app-header
+
+SharedModule module import in default module
+
+shared modele 
+
+exports:[
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent
+  ]
+
+create in defualt compnent
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<router-outlet></router-outlet>
+
+
+(we may be use lazy loading)
