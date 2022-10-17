@@ -1,5 +1,11 @@
+<!-- headr -->
 <app-header></app-header>
-<app-sidebar></app-sidebar>
-<router-outlet></router-outlet>
+<!-- dashboard component -->
+<mat-drawer-container class="example-container">
+    <!-- sidebar -->
+    <mat-drawer mode="side" opened><app-sidebar></app-sidebar></mat-drawer>
+    <!-- main content -->
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+<!-- footer -->
 <app-footer></app-footer>
-<router-outlet></router-outlet>
